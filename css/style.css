@@ -1,0 +1,523 @@
+/* General Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Allerta&family=Exo+2:wght@700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* Estilos para las secciones desplazables */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Allerta', sans-serif;
+  background: linear-gradient(45deg, #080808, #232931, #03073d);
+  
+   /* background: linear-gradient(45deg, #0B2545, #1E5799, #38A3A5); */
+}
+
+/* Header and Navigation */
+/* Estilos para los encabezados  */
+h1 {
+  color: #FFD32D; /* Amarillo suave */
+}
+
+h2 {
+  color: #FFB319; /* Naranja suave */
+}
+
+h3 {
+  color: #FF9900; /* Naranja */
+}
+/* finsugeridos por */
+
+header {
+  position: absolute;
+  top: 2.8125rem;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 1;
+}
+
+nav {
+  background-color: transparent;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+   margin: 0 1.25rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Allerta', sans-serif;
+}
+/* header {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 1;
+  padding: 10px; 
+}
+
+nav {
+  background-color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+
+  margin: 0 0.625rem;
+}
+
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Allerta', sans-serif;
+  font-size: 14px; 
+  padding: 5px 10px; 
+  transition: background-color 0.3s ease; 
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); 
+} */
+/*fIN NAV BAR*/
+/* Main Content */
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.left-section {
+  position: absolute;
+  top: 50%;
+  left: 2.5rem;
+  transform: translateY(-50%);
+  color: #fff;
+  width: 40%;
+  z-index: 2;
+  /* Increase z-index to render on top of .opacity-part */
+}
+
+.left-section .title {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  font-size: 3.25rem;
+  margin-bottom: 2.5rem;
+  white-space: nowrap;
+}
+
+.left-section p {
+  font-size: 1.125rem;
+  margin-bottom: 1.875rem;
+}
+
+.nivel p {
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #FFA500;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.875rem;
+  font-family: 'Allerta', sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  top: 26.756rem;
+  left: 35rem;
+}
+
+.btn:hover {
+  background-color: #FF8C00;
+  /* Cambiar el color de fondo al pasar el ratón */
+}
+
+.right-section img {
+  height: 31.25rem;
+  padding-left: 50%;
+  background-position: top 1px right 1px;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to left, #232931, transparent 50%);
+  mask-image: linear-gradient(to left, #232931, transparent 50%);
+}
+
+.section {
+  height: 100vh;
+  /* Altura de la ventana visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.section-content {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.text-column {
+  flex: 1;
+  padding: 20px;
+}
+
+.text-card {
+  background: linear-gradient(90deg, #080808, #232931, #03073d);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.image-column {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-placeholder:hover img {
+  transform: scale(1.1);
+}
+
+/*lo de */
+/* Estilos para ocultar las card y las imágenes inicialmente */
+.text-card,
+.image-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Estilos para mostrar las card y las imágenes con fadein */
+.text-card.animate-left,
+.image-placeholder.animate-right {
+  opacity: 1;
+}
+
+/* Agregar un retraso en la animación */
+.text-card {
+  transition-delay: 0.2s;
+}
+
+.image-placeholder {
+  transition-delay: 0.4s;
+}
+
+/* Animación para agregar las clases al hacer scroll */
+.section-content:nth-child(odd) .text-card {
+  animation: fadeInLeft 1s ease-in-out forwards;
+}
+
+.section-content:nth-child(even) .image-placeholder {
+  animation: fadeInRight 1s ease-in-out forwards;
+}
+
+/* Keyframes para las animaciones */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/*fin */
+
+/* Colores por sección */
+#section1 {
+  background: linear-gradient(90deg, #0a1c40, #0f2453, #142d67);
+}
+
+#section2 {
+  background: linear-gradient(90deg, #191d3a, #272b46, #363a52);
+}
+
+#section3 {
+  background: linear-gradient(90deg, #0f2933, #14516d, #238ec7);
+}
+
+#section4 {
+  background: linear-gradient(90deg, #00093c, #001e67, #002c92);
+}
+
+#section5 {
+  background: linear-gradient(90deg, #0c2461, #114584, #1867a8);
+}
+
+#section6 {
+  background: linear-gradient(90deg, #06283d, #0d3d5c, #147b7a);
+}
+/* #section1 {
+  background: linear-gradient(90deg, #0B2545, #1E5799, #38A3A5); 
+}
+
+#section2 {
+  background: linear-gradient(90deg, #22577A, #38A3A5, #57CC99); 
+}
+
+#section3 {
+  background: linear-gradient(90deg, #0B6E4F, #38A3A5, #57CC99); 
+}
+
+#section4 {
+  background: linear-gradient(90deg, #0B2545, #1E5799, #38A3A5); 
+}
+
+#section5 {
+  background: linear-gradient(90deg, #0B2545, #1E5799, #38A3A5); 
+
+#section6 {
+  background: linear-gradient(90deg, #22577A, #38A3A5, #57CC99); 
+} */
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #64B0BE;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  z-index: 1;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.linkedin {
+  background-image: url('/img/linkedin.png');
+}
+
+.telegram {
+  background-image: url('/img/telegram.png');
+}
+
+.whatsapp {
+  background-image: url('/img/whatsapp.png');
+}
+
+/* Estilos para el cursor personalizado */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  pointer-events: none;
+  /* Evita que el cursor intercepte eventos de clic */
+  z-index: 9999;
+  /* Asegura que el cursor esté en la parte superior */
+  animation: cursor-animation 1s infinite alternate;
+  /* Animación para mover el cursor */
+}
+
+@keyframes cursor-animation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    background-size: 60% auto;
+  }
+
+  .left-section {
+    width: 50%;
+  }
+
+  .left-section .title {
+    font-size: 36px;
+  }
+
+  .left-section p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    background-size: 70% auto;
+  }
+
+  .left-section {
+    width: 60%;
+  }
+
+  .left-section .title {
+    font-size: 30px;
+  }
+
+  .left-section p {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    background-size: 100% auto;
+    background-position: top center;
+  }
+
+  .left-section {
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .left-section .title {
+    font-size: 24px;
+  }
+
+  .left-section p {
+    font-size: 12px;
+  }
+
+  header {
+    padding: 5px 0;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+  }
+
+  .right-section img {
+    padding-left: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .btn {
+    position: static;
+    margin-top: 1.25rem;
+  }
+}
+
+/* Estilos para boton home */
+ .home-btn {
+ position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+  position: fixed;
+  top: 80%;
+  right: 0;
+  transform-origin: 100% 0;
+  z-index: 99999;
+  background-color: #FFB319; 
+   /*opacity: 0;*/
+   /* transform:  translateX(50%); rotate(90deg) */
+} 
+
+
+.home-btn i {
+  font-size: 24px;
+}
+
+/* @keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+img {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image ;
+  animation-name: show;
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+
+} */
+/* Mostrar el botón a partir de la sección 1 */
+/* #section1 ~ .section .home-btn {
+  opacity: 1;
+} */
